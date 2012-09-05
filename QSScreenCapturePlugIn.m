@@ -33,8 +33,8 @@
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObject:destinationPath]];
 	[task waitUntilExit];
-	[[QSReg preferredCommandInterface]selectObject:[QSObject fileObjectWithPath:destinationPath]];
-	[[QSReg preferredCommandInterface]actionActivate:nil];
+	[[QSReg preferredCommandInterface] selectObject:[QSObject fileObjectWithPath:destinationPath]];
+	[[QSReg preferredCommandInterface] actionActivate:nil];
 	return nil;
 }
 
@@ -43,8 +43,8 @@
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-is",destinationPath,nil]];
 	[task waitUntilExit];
-	[[QSReg preferredCommandInterface]selectObject:[QSObject fileObjectWithPath:destinationPath]];
-	[[QSReg preferredCommandInterface]actionActivate:nil];
+	[[QSReg preferredCommandInterface] selectObject:[QSObject fileObjectWithPath:destinationPath]];
+	[[QSReg preferredCommandInterface] actionActivate:nil];
 	return nil;
 }
 
@@ -53,8 +53,8 @@
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-iW",destinationPath,nil]];
 	[task waitUntilExit];
-	[[QSReg preferredCommandInterface]selectObject:[QSObject fileObjectWithPath:destinationPath]];
-	[[QSReg preferredCommandInterface]actionActivate:nil];
+	[[QSReg preferredCommandInterface] selectObject:[QSObject fileObjectWithPath:destinationPath]];
+	[[QSReg preferredCommandInterface] actionActivate:nil];
 	return nil;
 }
 @end
