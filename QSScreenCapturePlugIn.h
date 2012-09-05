@@ -6,7 +6,6 @@
 //  Copyright __MyCompanyName__ 2005. All rights reserved.
 //
 
-#import <QSCore/QSObject.h>
 #import "QSScreenCapturePlugIn.h"
 
 @interface QSScreenCapturePlugIn : NSObject
