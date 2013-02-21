@@ -1,7 +1,7 @@
 ## Screen Capture Plugin
 
 This plugin adds support for using Grab.app to capture portions of your display to image files, which can then be manipulated by Quicksilver.
-In order to see the objects added by the Screen Capture Plugin (they are visible in Quicksilver's first pane), you must enable the "Quicksilver Commands" catalog entry, found in the <a href="qs://preferences#QSCatalogPrefPane">Catalog Preferences</a> under the "Quicksilver" side tab.  
+In order to see the objects added by the Screen Capture Plugin (they are visible in Quicksilver's first pane), you must enable the "Internal Commands" catalog entry, found in the <a href="qs://preferences#QSCatalogPrefPane">Catalog Preferences</a> under the "Quicksilver" side tab.  
   
 
 Note that all pictures captured with the Screen Capture Plugin are also saved to your Desktop.
