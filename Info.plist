@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.5.1</string>
 	<key>CFBundleVersion</key>
-	<string>20</string>
+	<string>22</string>
 	<key>NSPrincipalClass</key>
 	<string>QSScreenCapturePlugIn</string>
 	<key>QSPlugIn</key>
@@ -36,23 +36,24 @@
 		<key>extendedDescription</key>
 		<string>&lt;h2&gt;Screen Capture Plugin&lt;/h2&gt;
 &lt;p&gt;This plugin adds support for using Grab.app to capture portions of your display to image files, which can then be manipulated by Quicksilver.
-In order to see the objects added by the Screen Capture Plugin (they are visible in Quicksilver&apos;s first pane), you must enable the &quot;Quicksilver Commands&quot; catalog entry, found in the &lt;a href=&quot;qs://preferences#QSCatalogPrefPane&quot;&gt;Catalog Preferences&lt;/a&gt; under the &quot;Quicksilver&quot; side tab.&lt;br&gt;
+In order to see the objects added by the Screen Capture Plugin (they are visible in Quicksilver's first pane), you must enable the "Internal Commands" catalog entry, found in the &lt;a href="qs://preferences#QSCatalogPrefPane"&gt;Catalog Preferences&lt;/a&gt; under the "Quicksilver" side tab.&lt;br&gt;
 &lt;/p&gt;
 &lt;p&gt;Note that all pictures captured with the Screen Capture Plugin are also saved to your Desktop.&lt;/p&gt;
 &lt;h4&gt;Command Objects&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt; Capture Region &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This command object (run from Quicksilver&apos;s 1st pane) enables Grab.app in its &quot;Capture Selection&quot; mode. A cross hair is displayed on screen allowing you to drag a rectangle around what you want captured.
+&lt;p&gt;This command object (run from Quicksilver's 1st pane) enables Grab.app in its "Capture Selection" mode. A cross hair is displayed on screen allowing you to drag a rectangle around what you want captured.
 Once complete the captured region is returned to Quicksilver.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; Capture Window &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Similar to the &apos;Capture Region&apos; command object, &apos;Capture Window&apos; gives you allows you to capture a whole window, and return the corresponding image to Quicksilver&lt;/p&gt;
+&lt;p&gt;Similar to the 'Capture Region' command object, 'Capture Window' gives you allows you to capture a whole window, and return the corresponding image to Quicksilver&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; Capture Screen &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The &apos;Capture Screen&apos; command object takes a screenshot of your current screen and returns it to Quicksilver.&lt;/p&gt;</string>
+&lt;p&gt;The 'Capture Screen' command object takes a screenshot of your current screen and returns it to Quicksilver.&lt;/p&gt;</string>
 		<key>icon</key>
 		<string>com.apple.Grab</string>
 		<key>qsversion</key>
 		<string>3525</string>
 		<key>relatedBundles </key>
-		<array/>
+		<array>
+		</array>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>

@@ -191,7 +191,7 @@
 			baseConfigurationReference = 14DE93EA10D0DA3C00851A6F /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-bundle";
-				PRODUCT_NAME = "Screen Capture Actions";
+				PRODUCT_NAME = "Screen Capture Plugin";
 				ZERO_LINK = YES;
 			};
 			name = Debug;
@@ -201,7 +201,7 @@
 			baseConfigurationReference = 14DE93EA10D0DA3C00851A6F /* QSPlugIn.xcconfig */;
 			buildSettings = {
 				OTHER_LDFLAGS = "-bundle";
-				PRODUCT_NAME = "Screen Capture Actions";
+				PRODUCT_NAME = "Screen Capture Plugin";
 				ZERO_LINK = NO;
 			};
 			name = Release;
