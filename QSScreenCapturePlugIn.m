@@ -46,11 +46,13 @@
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-is",destinationPath,nil]];
 	[task waitUntilExit];
-    QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
-	[[QSReg preferredCommandInterface] selectObject:capturedImage];
-	[[QSReg preferredCommandInterface] actionActivate:nil];
-    NSDictionary *info = @{@"object": capturedImage};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedRegion" userInfo:info];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
+        QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
+        [[QSReg preferredCommandInterface] selectObject:capturedImage];
+        [[QSReg preferredCommandInterface] actionActivate:nil];
+        NSDictionary *info = @{@"object": capturedImage};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedRegion" userInfo:info];
+    }
 	return nil;
 }
 
@@ -59,11 +61,13 @@
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-iW",destinationPath,nil]];
 	[task waitUntilExit];
-    QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
-	[[QSReg preferredCommandInterface] selectObject:capturedImage];
-	[[QSReg preferredCommandInterface] actionActivate:nil];
-    NSDictionary *info = @{@"object": capturedImage};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedWindow" userInfo:info];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
+        QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
+        [[QSReg preferredCommandInterface] selectObject:capturedImage];
+        [[QSReg preferredCommandInterface] actionActivate:nil];
+        NSDictionary *info = @{@"object": capturedImage};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedWindow" userInfo:info];
+    }
 	return nil;
 }
 
