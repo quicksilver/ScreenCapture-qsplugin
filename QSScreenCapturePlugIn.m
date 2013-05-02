@@ -29,7 +29,7 @@
 @implementation QSScreenCapturePlugIn
 
 - (QSObject *)captureScreen:(QSObject *)dObject{
-	NSString *destinationPath=[@"~/Desktop/Picture.png" stringByStandardizingPath];
+	NSString *destinationPath = [self filePathForCaptureType:@"Screen Shot"];
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObject:destinationPath]];
 	[task waitUntilExit];
@@ -42,7 +42,7 @@
 }
 
 - (QSObject *)captureRegion:(QSObject *)dObject{
-	NSString *destinationPath=[@"~/Desktop/Picture.png" stringByStandardizingPath];
+	NSString *destinationPath = [self filePathForCaptureType:@"Screen Region"];
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-is",destinationPath,nil]];
 	[task waitUntilExit];
@@ -55,7 +55,7 @@
 }
 
 - (QSObject *)captureWindow:(QSObject *)dObject{
-	NSString *destinationPath=[@"~/Desktop/Picture.png" stringByStandardizingPath];
+	NSString *destinationPath = [self filePathForCaptureType:@"Window"];
 	destinationPath=[destinationPath firstUnusedFilePath];
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-iW",destinationPath,nil]];
 	[task waitUntilExit];
@@ -65,5 +65,13 @@
     NSDictionary *info = @{@"object": capturedImage};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedWindow" userInfo:info];
 	return nil;
+}
+
+- (NSString *)filePathForCaptureType:(NSString *)type
+{
+    NSDate *now = [NSDate date];
+    NSString *timestamp = [now descriptionWithCalendarFormat:@"%Y-%m-%d at %H.%M.%S" timeZone:nil locale:nil];
+    NSString *path = [NSString stringWithFormat:@"~/Desktop/%@ %@.png", type, timestamp];
+    return [path stringByStandardizingPath];
 }
 @end
