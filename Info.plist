@@ -113,7 +113,7 @@ Once complete the captured region is returned to Quicksilver.&lt;/p&gt;
 				<key>icon</key>
 				<string>com.apple.Grab</string>
 				<key>name</key>
-				<string>Region Captured</string>
+				<string>Region Captured ☿</string>
 				<key>provider</key>
 				<string>QSScreenCapturePlugIn</string>
 				<key>type</key>
@@ -124,7 +124,7 @@ Once complete the captured region is returned to Quicksilver.&lt;/p&gt;
 				<key>icon</key>
 				<string>com.apple.Grab</string>
 				<key>name</key>
-				<string>Screen Captured</string>
+				<string>Screen Captured ☿</string>
 				<key>provider</key>
 				<string>QSScreenCapturePlugIn</string>
 				<key>type</key>
@@ -135,13 +135,18 @@ Once complete the captured region is returned to Quicksilver.&lt;/p&gt;
 				<key>icon</key>
 				<string>com.apple.Grab</string>
 				<key>name</key>
-				<string>Window Captured</string>
+				<string>Window Captured ☿</string>
 				<key>provider</key>
 				<string>QSScreenCapturePlugIn</string>
 				<key>type</key>
 				<string>Screen Capture</string>
 			</dict>
 		</dict>
+	</dict>
+	<key>QSRequirements</key>
+	<dict>
+		<key>version</key>
+		<string>4001</string>
 	</dict>
 </dict>
 </plist>
