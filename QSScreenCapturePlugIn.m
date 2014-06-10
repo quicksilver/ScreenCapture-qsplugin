@@ -75,7 +75,20 @@
 {
     NSDate *now = [NSDate date];
     NSString *timestamp = [now descriptionWithCalendarFormat:@"%Y-%m-%d at %H.%M.%S" timeZone:nil locale:nil];
-    NSString *path = [NSString stringWithFormat:@"~/Desktop/%@ %@.png", type, timestamp];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // fallback directory
+    NSString *screenshotDirectory = @"~/Desktop";
+    // attempt to read system default screenshot location
+    NSString *systemDefaultScreenCaptureLocationString = [[defaults persistentDomainForName:@"com.apple.screencapture"] valueForKey:@"location"];
+    
+    // if the system default screenshot location exists then use that location
+    if( [[NSFileManager defaultManager] fileExistsAtPath:systemDefaultScreenCaptureLocationString] )
+    {
+        NSURL *screenshotLocationPreference =[NSURL fileURLWithPath:systemDefaultScreenCaptureLocationString isDirectory: YES];
+        screenshotDirectory = [screenshotLocationPreference path];
+    }
+
+    NSString *path = [NSString stringWithFormat:@"%@/%@ %@.png", screenshotDirectory, type, timestamp];
     return [path stringByStandardizingPath];
 }
 @end
