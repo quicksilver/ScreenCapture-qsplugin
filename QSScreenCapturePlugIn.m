@@ -44,7 +44,7 @@
 - (QSObject *)captureRegion:(QSObject *)dObject{
 	NSString *destinationPath = [self filePathForCaptureType:@"Screen Region"];
 	destinationPath=[destinationPath firstUnusedFilePath];
-	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-is",destinationPath,nil]];
+	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObjects:@"-i",destinationPath,nil]];
 	[task waitUntilExit];
     if ([[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
         QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
