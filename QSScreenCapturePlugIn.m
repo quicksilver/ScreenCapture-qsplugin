@@ -34,8 +34,7 @@
 	NSTask *task=[NSTask launchedTaskWithLaunchPath:SCTOOL arguments:[NSArray arrayWithObject:destinationPath]];
 	[task waitUntilExit];
     QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
-	[[QSReg preferredCommandInterface] selectObject:capturedImage];
-	[[QSReg preferredCommandInterface] actionActivate:nil];
+    [[QSReg preferredCommandInterface] executePartialCommand:@[capturedImage]];
     NSDictionary *info = @{@"object": capturedImage};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedScreen" userInfo:info];
 	return nil;
@@ -48,8 +47,7 @@
 	[task waitUntilExit];
     if ([[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
         QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
-        [[QSReg preferredCommandInterface] selectObject:capturedImage];
-        [[QSReg preferredCommandInterface] actionActivate:nil];
+        [[QSReg preferredCommandInterface] executePartialCommand:@[capturedImage]];
         NSDictionary *info = @{@"object": capturedImage};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedRegion" userInfo:info];
     }
@@ -63,8 +61,7 @@
 	[task waitUntilExit];
     if ([[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
         QSObject *capturedImage = [QSObject fileObjectWithPath:destinationPath];
-        [[QSReg preferredCommandInterface] selectObject:capturedImage];
-        [[QSReg preferredCommandInterface] actionActivate:nil];
+        [[QSReg preferredCommandInterface] executePartialCommand:@[capturedImage]];
         NSDictionary *info = @{@"object": capturedImage};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"QSEventNotification" object:@"QSCapturedWindow" userInfo:info];
     }
